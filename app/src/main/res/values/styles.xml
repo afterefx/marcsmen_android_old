@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="marcsmen" parent="Theme.AppCompat.NoActionBar" >
+        <item name="colorAccent">@color/marcsmenRed</item>
+    </style>
+
 </resources>

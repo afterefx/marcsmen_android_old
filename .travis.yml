@@ -1,0 +1,31 @@
+language: android
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-23.0.2
+    - android-23
+    - extra-android-m2repository
+  licenses:
+    - android-sdk-license-5be876d5
+
+jdk:
+  - oraclejdk8
+
+branches:
+  except:
+    - gh-pages
+
+sudo: false
+
+script:
+  - sh ci.sh
+
+notifications:
+  email: true
+
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.gradle

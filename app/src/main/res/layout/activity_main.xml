@@ -1,20 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.marcsmen.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:text="Chat"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="@+id/activity_main"
+        android:id="@+id/chat"
         app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+        app:layout_constraintTop_toTopOf="@+id/activity_main"
+        android:layout_marginTop="24dp"
         app:layout_constraintRight_toRightOf="@+id/activity_main"
-        app:layout_constraintTop_toTopOf="@+id/activity_main" />
+         />
+
+    <Button
+        android:text="Music"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/music"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+        app:layout_constraintTop_toBottomOf="@+id/chat"
+        android:layout_marginTop="24dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_main"
+         />
+
+    <Button
+        android:text="Calendar"
+        android:layout_width="220dp"
+        android:layout_height="52dp"
+        android:id="@+id/calendar"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+        app:layout_constraintTop_toBottomOf="@+id/music"
+        android:layout_marginTop="24dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_main"
+         />
+
+    <Button
+        android:text="Tiokets"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/tickets"
+        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
+        app:layout_constraintTop_toBottomOf="@+id/calendar"
+        android:layout_marginTop="24dp"
+        app:layout_constraintRight_toRightOf="@+id/activity_main" />
+
 
 </android.support.constraint.ConstraintLayout>
