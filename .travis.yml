@@ -5,8 +5,10 @@ android:
     - tools
     - platform-tools
     - build-tools-23.0.3
-    - android-23
+    - android-24
     - extra-android-m2repository
+    - extra-google-google_play_services
+    - extra-google-m2repository
   licenses:
     - android-sdk-license-.+
 

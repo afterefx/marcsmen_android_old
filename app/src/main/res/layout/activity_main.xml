@@ -41,5 +41,11 @@
         android:background="@color/marcsmenRed"
         android:text="@string/tiokets" />
 
+    <TextView
+        android:id="@+id/gitHashId"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:layout_width="220dp" />
+
 
 </LinearLayout>

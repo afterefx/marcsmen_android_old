@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import org.marcsmen.chat.ChatActivity;
 import org.marcsmen.music.MusicActivity;
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button music;
     private Button calendar;
     private Button tickets;
+    private TextView gitHash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,11 +30,14 @@ public class MainActivity extends AppCompatActivity {
         music = ((Button) findViewById(R.id.music));
         calendar = ((Button) findViewById(R.id.calendar));
         tickets = ((Button) findViewById(R.id.tickets));
+        gitHash = ((TextView) findViewById(R.id.gitHashId));
 
         setClickListener(chat, ChatActivity.class);
         setClickListener(music, MusicActivity.class);
         setClickListener(calendar, MusicActivity.class);
         setClickListener(tickets, MusicActivity.class);
+
+        gitHash.setText(BuildConfig.GitHash);
 
     }
 
