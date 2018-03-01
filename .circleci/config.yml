@@ -1,0 +1,52 @@
+# Java Gradle CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+
+cache_key: &cache_key
+  key: jars-{{ checksum "build.gradle" }}-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/android:api-27-node8-alpha
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          <<: *cache_key
+
+      - run:
+          name: Assemble
+          command: ./gradlew assemble
+      - store_artifacts:
+          path: build/outputs
+      - store_artifacts:
+          path: build/commit-timestamp.txt
+
+      - run:
+          name: Lint
+          command: ./gradlew :marc:lint
+      - store_artifacts:
+          path: build/reports/lint-results.html
+
+
+
+      - save_cache:
+          <<: *cache_key
+          paths:
+            - ~/.gradle/caches
+            - ~/.gradle/wrapper
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
